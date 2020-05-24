@@ -1,17 +1,22 @@
 {
-  "name": "tocar2",
+  "name": "tocame",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node server"
+    "start": "node server",
+    "db:migrate": "npx sequelize db:migrate"
   },
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.8.1",
     "core-js": "^3.6.4",
     "express": "^4.17.1",
+    "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.10",
+    "sequelize-cli": "^5.5.1",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6",
     "vuex": "^3.1.3"

@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "wasprobot",
+    "password": "",
+    "database": "tocame",
+    "host": "localhost",
+    "dialect": "postgres",
+    "operatorsAliases": false
+  }
+}

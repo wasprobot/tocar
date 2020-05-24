@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
+    <h2 v-if="$auth.user">Hello {{ $auth.user.name }}</h2>
     <HelloWorld msg="Welcome to Your Vue.js App" />
 
     <!-- Check that the SDK client is not currently loading before accessing is methods -->
@@ -14,8 +14,8 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
+// const db = require("./models/index.js");
 
 export default {
   name: "Home",
@@ -23,16 +23,17 @@ export default {
     HelloWorld
   },
   methods: {
-    // Log the user in
     login() {
       this.$auth.loginWithRedirect();
     },
-    // Log the user out
     logout() {
       this.$auth.logout({
         returnTo: window.location.origin
       });
     }
+  },
+  mounted() {
+    console.log("USER:", this.$auth.user.name);
   }
 };
 </script>
