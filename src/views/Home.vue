@@ -15,12 +15,20 @@
 
 <script>
 import HelloWorld from "@/components/HelloWorld.vue";
-// const db = require("./models/index.js");
+const db = require("../../models");
 
 export default {
   name: "Home",
   components: {
     HelloWorld
+  },
+  watch: {
+    "$auth.user": function() {
+      const user = this.$auth.user;
+      db.User.findOrCreate({ where: { email: user.email } }).then(
+        console.log("User created", user.email)
+      );
+    }
   },
   methods: {
     login() {
@@ -31,9 +39,6 @@ export default {
         returnTo: window.location.origin
       });
     }
-  },
-  mounted() {
-    console.log("USER:", this.$auth.user.name);
   }
 };
 </script>

@@ -12,9 +12,11 @@
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.8.1",
     "core-js": "^3.6.4",
+    "dns": "^0.2.2",
     "express": "^4.17.1",
     "pg": "^8.2.1",
     "pg-hstore": "^2.3.3",
+    "pg-native": "^3.0.0",
     "sequelize": "^5.21.10",
     "sequelize-cli": "^5.5.1",
     "vue": "^2.6.11",
